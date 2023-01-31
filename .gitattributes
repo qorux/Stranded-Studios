@@ -6,3 +6,5 @@ name = Unity Yaml Merger
 *.anim merge=unityyamlmerge
 *.prefab merge=unityyamlmerge
 *.asset merge=unityyamlmerge
+*.wav binary
+*.mp3 binary
