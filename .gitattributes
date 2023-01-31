@@ -1,0 +1,8 @@
+[merge "unityyamlmerge"]
+name = Unity Yaml Merger
+*.extension filter=lfs diff=lfs merge=lfs –text
+# Unity YAML assets
+*.unity merge=unityyamlmerge
+*.anim merge=unityyamlmerge
+*.prefab merge=unityyamlmerge
+*.asset merge=unityyamlmerge
