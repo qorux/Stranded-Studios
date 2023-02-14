@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2895,6 +2895,18 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 935628f6ddb704004b5ce5cca310f48a, type: 2}
   - {fileID: 11400000, guid: ae5ba6105c3404e6d92b11fd52775bcf, type: 2}
   - {fileID: 11400000, guid: 79097f4bde9734814bdd5f907ff18a82, type: 2}
+--- !u!114 &735174146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735174134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afd68f7396ff4363bce51161ec603da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &778456242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3923,6 +3935,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 988510252}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1066064903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4674286094358643832, guid: 27e25e3bc7ba5f640aea250f9a3842bd, type: 3}
+  m_PrefabInstance: {fileID: 1818140626}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1066064906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066064903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41e5cbe27ba3e4586adc6ca071ac7c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1066064907
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1066064903}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 1, z: 2.4622345}
+  m_Center: {x: 0, y: 0.09977247, z: -0.24424326}
 --- !u!1 &1091596154
 GameObject:
   m_ObjectHideFlags: 0
