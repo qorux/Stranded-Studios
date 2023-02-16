@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteracts : MonoBehaviour
 {
+
     private void Update()
     {
 
@@ -13,6 +15,7 @@ public class PlayerInteracts : MonoBehaviour
         foreach(Collider collider in colliderArray){
             if(collider.TryGetComponent(out ItemInteractable itemInteractable)){
                 itemInteractable.Interact();
+              
             }
         }
         }
