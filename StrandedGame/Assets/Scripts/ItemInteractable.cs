@@ -6,5 +6,6 @@ public class ItemInteractable : MonoBehaviour
 {
     public void Interact(){
         Debug.Log("MICHEAL");
+        Destroy(gameObject);
     }
 }
