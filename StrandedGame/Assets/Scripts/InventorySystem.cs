@@ -22,7 +22,8 @@ public class InventorySystem : MonoBehaviour
     }
 
     private void Update() {
-       InventoryUI.SetActive(true);
+       //InventoryUI.SetActive(true);
+
 
     }
 
