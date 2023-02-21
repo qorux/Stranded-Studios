@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class NoteAppear : MonoBehaviour
 {
-    private Canvas CanvasObject;
+    public Canvas NoteObject;
+    public Canvas InventoryObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        CanvasObject = GetComponent<Canvas>();
-        CanvasObject.enabled=false;
+        GameObject inventoryTemp = GameObject.Find("InventoryCanvas");
+        if (inventoryTemp != null )
+        {
+            InventoryObject = inventoryTemp.GetComponent<Canvas>();
+        }
+        NoteObject = GetComponent<Canvas>();
+        NoteObject.enabled=false;
     }
 
     // Update is called once per frame
@@ -18,7 +24,8 @@ public class NoteAppear : MonoBehaviour
     {
         if (Input.GetKeyDown("n"))
         {
-            CanvasObject.enabled = !CanvasObject.enabled;
+            InventoryObject.enabled=!InventoryObject.enabled;
+            NoteObject.enabled = !NoteObject.enabled;
         }
     }
 }
