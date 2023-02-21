@@ -7,8 +7,10 @@ public class PlayerInteractsUI : MonoBehaviour
 [SerializeField] private PlayerInteracts playerInteracts;
    [SerializeField] private GameObject containerGameObject;
 
+   public bool hasKey = false;
+
     private void Update(){
-        if(playerInteracts.GetInteractableObject()!= null){
+        if(playerInteracts.GetInteractableObject()!= null && hasKey){
             Show();
         }
         else{

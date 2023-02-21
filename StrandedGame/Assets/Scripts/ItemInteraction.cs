@@ -13,6 +13,7 @@ public class ItemInteraction : MonoBehaviour
     [SerializeField] TextMeshProUGUI txt_HovItem;
 
     public int amountOfNotes = 0;
+    public bool hasKey = false;
 
     private void Start() {
         cam = Camera.main.transform;
@@ -23,16 +24,33 @@ public class ItemInteraction : MonoBehaviour
        
        RaycastHit hit;
 
-     if(Physics.Raycast(cam.position, cam.forward, out hit, 2, itemLayer))
-      
+     if(Physics.Raycast(cam.position, cam.forward, out hit, 2, itemLayer)){
+        if(hasKey == false){
+
+         if(!hit.collider.GetComponent<ItemObject>())
+            return;
+        txt_HovItem.text = $"Press 'E' to pick up the {hit.collider.GetComponent<ItemObject>().itemStats.name}";
+        }
+        //else{
+       // if(!hit.collider.GetComponent<ItemObject>() && hasKey==true)
+        //    return;
+       // txt_HovItem.text = $"You can now pick it up!{hit.collider.GetComponent<ItemObject>().amount}x {hit.collider.GetComponent<ItemObject>().itemStats.name}";
+        //}
+
+       
+        
+        
+
         if(Input.GetKeyDown(KeyCode.E))
         {
             inventorySystem.PickUpItem(hit.collider.GetComponent<ItemObject>());
             amountOfNotes = amountOfNotes + 1;
         }
         
-       
-
+         }
+         else{
+            txt_HovItem.text = string.Empty;
+         }
         }
 
 }
