@@ -25,17 +25,17 @@ public class ItemInteraction : MonoBehaviour
        RaycastHit hit;
 
      if(Physics.Raycast(cam.position, cam.forward, out hit, 2, itemLayer)){
-        if(hasKey == false){
-
-         if(!hit.collider.GetComponent<ItemObject>())
-            return;
-        txt_HovItem.text = $"Press 'E' to pick up the {hit.collider.GetComponent<ItemObject>().itemStats.name}";
-        }
+        //if(hasKey == false)
+                        {
+            if(!hit.collider.GetComponent<ItemObject>())
+                return;
+            txt_HovItem.text = $"Press 'E' tp pickup {hit.collider.GetComponent<ItemObject>().itemStats.name}!";
+                        }
         //else{
-       // if(!hit.collider.GetComponent<ItemObject>() && hasKey==true)
-        //    return;
-       // txt_HovItem.text = $"You can now pick it up!{hit.collider.GetComponent<ItemObject>().amount}x {hit.collider.GetComponent<ItemObject>().itemStats.name}";
-        //}
+        //    if(!hit.collider.GetComponent<ItemObject>())
+        //        return;
+       //     txt_HovItem.text = $"You have a key, you can now pick it up {hit.collider.GetComponent<ItemObject>().itemStats.name}";
+       // }
 
        
         
