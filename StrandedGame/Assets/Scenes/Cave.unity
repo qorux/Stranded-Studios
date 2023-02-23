@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 11d291c7f392e7b4f810f3ab054fa777, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -902,7 +902,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -3257,6 +3257,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f999b6beafe9d249bf9c3a91ff26ff6, type: 3}
+--- !u!1 &962911543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7608741451231493139, guid: 1e5f707d1cbd9e542a332cd6c743cfd4, type: 3}
+  m_PrefabInstance: {fileID: 1916129045}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &962911547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962911543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda53cccc6dd58d4593b19b66a0dc938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &962911548
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962911543}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3939469, y: 0.41421992, z: 0.4142202}
+  m_Center: {x: 0.00000011920929, y: -0.000000022351742, z: 0.000000052154064}
 --- !u!1001 &975200112
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6066,7 +6096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7608741451231493139, guid: 1e5f707d1cbd9e542a332cd6c743cfd4, type: 3}
       propertyPath: m_Name
-      value: 04_CannonShop_CannonBall_Single
+      value: EntranceBlack
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e5f707d1cbd9e542a332cd6c743cfd4, type: 3}
