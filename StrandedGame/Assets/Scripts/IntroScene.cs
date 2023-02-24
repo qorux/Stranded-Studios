@@ -15,7 +15,7 @@ public class IntroScene : MonoBehaviour
         {
             introText=tempObject.GetComponent<TextMeshProUGUI>();
         }
-        introText.text = "...You open your eyes and find yourself laying on a beach.";
+        introText.text = "Yesterday you met a strange fellow called mr X at the pub. He seemed nice but a bit suspicious.. You remember him handing you a bottle of rum, but after that your memory fails you.";
         
     }
 
@@ -25,7 +25,7 @@ public class IntroScene : MonoBehaviour
      if (Input.anyKey && !keyPressed) 
         {
             keyPressed= true;
-            introText.text += "<br> You can’t remember how you got here but you see what you think is parts of your trusty ship laying on the beach. <br> Still dazed and trying to remember how you ended up here, maybe it's a good idea to take a look around...";
+            introText.text += "<br> You now awaken on a desert island, with no clue as to how you got there. There appears to be a broken boat next to you and a note waiting for you…";
         }   
     }
 }
