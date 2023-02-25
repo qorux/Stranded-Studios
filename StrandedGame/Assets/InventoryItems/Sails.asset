@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4c21e56c4c204298bfca81065f9a9cf, type: 3}
-  m_Name: Wood
+  m_Name: Sails
   m_EditorClassIdentifier: 
-  id: 2
-  itemName: to dig up the Planks!
+  id: 8
+  itemName: to dig up the Sails!
   desription: 
   prefab: {fileID: 0}
-  icon: {fileID: 2800000, guid: b8ffa08491b84fa42a52940efc10fce5, type: 3}
+  icon: {fileID: 2800000, guid: 5a40f7628c2c8944d944c3a02e8b9d7f, type: 3}
   type: 0
   rarity: 0
-  maxStack: 1
-  weight: 1
-  baseValue: 1
+  maxStack: 0
+  weight: 0
+  baseValue: 0

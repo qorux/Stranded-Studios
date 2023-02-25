@@ -12,6 +12,8 @@ public class ItemInteraction : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI txt_HovItem;
 
+   // [SerializeField] TextMeshProUGUI remindme;
+
     public int amountOfNotes = 0;
     public bool hasKey = false;
 
@@ -29,7 +31,7 @@ public class ItemInteraction : MonoBehaviour
                         {
             if(!hit.collider.GetComponent<ItemObject>())
                 return;
-            txt_HovItem.text = $"Press 'E' to {hit.collider.GetComponent<ItemObject>().itemStats.itemName}!";
+            txt_HovItem.text = $"Press 'E' to {hit.collider.GetComponent<ItemObject>().itemStats.itemName}";
                         }
         //else{
         //    if(!hit.collider.GetComponent<ItemObject>())
@@ -41,10 +43,11 @@ public class ItemInteraction : MonoBehaviour
         
         
 
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E) && amountOfNotes >= 0)
         {
             inventorySystem.PickUpItem(hit.collider.GetComponent<ItemObject>());
             amountOfNotes = amountOfNotes + 1;
+         
         }
         
          }
