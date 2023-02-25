@@ -14,9 +14,6 @@ public class ItemInteraction : MonoBehaviour
 
    // [SerializeField] TextMeshProUGUI remindme;
 
-    public int amountOfNotes = 0;
-    public bool hasKey = false;
-
     private void Start() {
         cam = Camera.main.transform;
         inventorySystem = GetComponent<InventorySystem>();
@@ -43,10 +40,10 @@ public class ItemInteraction : MonoBehaviour
         
         
 
-        if(Input.GetKeyDown(KeyCode.E) && amountOfNotes >= 0)
+        if(Input.GetKeyDown(KeyCode.E) )
         {
             inventorySystem.PickUpItem(hit.collider.GetComponent<ItemObject>());
-            amountOfNotes = amountOfNotes + 1;
+            ;
          
         }
         
