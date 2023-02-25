@@ -29,7 +29,7 @@ public class ItemInteraction : MonoBehaviour
                         {
             if(!hit.collider.GetComponent<ItemObject>())
                 return;
-            txt_HovItem.text = $"Press 'E' tp pickup {hit.collider.GetComponent<ItemObject>().itemStats.name}!";
+            txt_HovItem.text = $"Press 'E' to {hit.collider.GetComponent<ItemObject>().itemStats.itemName}!";
                         }
         //else{
         //    if(!hit.collider.GetComponent<ItemObject>())
