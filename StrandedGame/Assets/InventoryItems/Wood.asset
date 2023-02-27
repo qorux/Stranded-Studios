@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wood
   m_EditorClassIdentifier: 
   id: 2
-  itemName: to dig up the Planks!
+  itemName: to pick up the Planks!
   desription: 
   prefab: {fileID: 0}
   icon: {fileID: 2800000, guid: b8ffa08491b84fa42a52940efc10fce5, type: 3}
