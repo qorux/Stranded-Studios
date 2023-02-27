@@ -36,15 +36,13 @@ public class ItemInteraction : MonoBehaviour
        //     txt_HovItem.text = $"You have a key, you can now pick it up {hit.collider.GetComponent<ItemObject>().itemStats.name}";
        // }
 
-       
-        
-        
+    
 
         if(Input.GetKeyDown(KeyCode.E) )
         {
             inventorySystem.PickUpItem(hit.collider.GetComponent<ItemObject>());
-            ;
-         
+            
+        
         }
         
          }

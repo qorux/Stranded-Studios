@@ -11,7 +11,7 @@ public class PlayerInteractsUI : MonoBehaviour
    Transform cam;
     [SerializeField] LayerMask itemLayer;
 
-   public int hasPlanks = 0;
+   public int amountOfPlanks = 0;
 
 
    private void Start() {
@@ -23,7 +23,7 @@ public class PlayerInteractsUI : MonoBehaviour
         RaycastHit hit;
         
         if(Physics.Raycast(cam.position, cam.forward, out hit, 2, itemLayer)){
-            if(playerInteracts.GetInteractableObject()!= null && hasPlanks == 3){
+            if(playerInteracts.GetInteractableObject()!= null && amountOfPlanks == 3){
             //Show();
             txtInteractionScript.text = $"Hold 'B' to build the boat";
             }
@@ -36,12 +36,4 @@ public class PlayerInteractsUI : MonoBehaviour
             txtInteractionScript.text = string.Empty;
         }
     }
-   private void Show(){
-    //containerGameObject.SetActive(true);
-    
-   }
-
-   private void Hide(){
-   //containerGameObject.SetActive(false);
-   }
 }
