@@ -7,7 +7,7 @@ public class NoteAppear : MonoBehaviour
 {
     public Canvas NoteObject;
     public Canvas InventoryObject;
-    private int noteCount = 1;
+    private int noteCount = 0;
     public TextMeshProUGUI noteText;
 
     // Start is called before the first frame update
@@ -25,13 +25,13 @@ public class NoteAppear : MonoBehaviour
         {
             noteText=noteTemp.GetComponent<TextMeshProUGUI>();
         }
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (noteCount == 0)
+        if (noteCount==0)
         {
             noteText.text = "I’m sorry I left you here on the island, but I need you to retrieve something for me. Somewhere on the island a very valuable treasure is hidden. I was here many years ago searching for it but could not find it, and now I am too old to do it myself!\r\n\r\nOh and sorry about the broken boat, it was the only one I could spare. There should be some spare parts around the island for you to find. Last time I was here there were some rum smugglers operating on the eastern part of the island, you might find something useful there. (FYI the boat points to the north). I have left some notes around the island that should help you find what you need to. I also left you a shovel that might come in handy.\r\n\r\nGood luck! //X";
         }
