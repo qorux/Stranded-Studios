@@ -771,7 +771,7 @@ MonoBehaviour:
   itemLayer:
     serializedVersion: 2
     m_Bits: 0
-  hasPlanks: 0
+  amountOfPlanks: 0
 --- !u!1001 &111365824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2343,7 +2343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 244
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5826,7 +5826,7 @@ MonoBehaviour:
   itemLayer:
     serializedVersion: 2
     m_Bits: 128
-  hasPlanks: 0
+  amountOfPlanks: 0
 --- !u!1 &736491431 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1686456831373116, guid: 7d49defcbb1b546f3b84c03c71907d8c, type: 3}
@@ -9056,6 +9056,7 @@ MonoBehaviour:
   NoteObject: {fileID: 0}
   InventoryObject: {fileID: 0}
   noteText: {fileID: 0}
+  slot: {fileID: 0}
 --- !u!114 &1180767628
 MonoBehaviour:
   m_ObjectHideFlags: 0
