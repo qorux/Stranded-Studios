@@ -9,6 +9,8 @@ using UnityEngine.UI;
 public class InventorySystem : MonoBehaviour
 {
     public Text objective;
+    public int noteCount = 0;
+
     [SerializeField] public Slot[] slots = new Slot[40];
     [SerializeField] GameObject InventoryUI;
     [SerializeField] TextMeshProUGUI pickUpScript;
@@ -34,6 +36,7 @@ public class InventorySystem : MonoBehaviour
 
     private void Update() {
         //InventoryUI.SetActive(true);
+        noteCount = slots[0].AmountInSlot;
         cam = Camera.main.transform;
         WinGame();
         pickUpScript.text = string.Empty;
@@ -75,7 +78,7 @@ public class InventorySystem : MonoBehaviour
 
     public void WinGame() { 
      
-            if (slots[5].ItemInSlot != null)
+            if (slots[6].ItemInSlot != null)
             {
                 //kolla om player byggt båten
                 SceneManager.LoadScene(4);
@@ -106,45 +109,82 @@ public class InventorySystem : MonoBehaviour
 
         if (slots[6].ItemInSlot != null) //skatt
         {
-            //du får lov att laga båten
+            objective.text = "Current objective: Fix the boat and escape the island";
+            if (Physics.Raycast(cam.position, cam.forward, out hit, 4, itemLayer))
+            {
+                if (hit.collider.GetComponent<ItemObject>().tag != "Win")
+                {
+                    pickUpScript.text = "You should pick up something else first...";
+                }
+            }
         }
         else if (slots[5].ItemInSlot != null) //nyckel
         {
-            //du får lov att hitta skatten
+            objective.text = "Current objective: Find the treasure in the cave";
+            if (Physics.Raycast(cam.position, cam.forward, out hit, 4, itemLayer))
+            {
+                if (hit.collider.GetComponent<ItemObject>().tag != "Treasure")
+                {
+                    pickUpScript.text = "You should pick up something else first...";
+                }
+            }
         }
-        else if (slots[4].ItemInSlot != null) //plankor
+        else if (slots[4].ItemInSlot != null && noteCount <= 58) //plankor
         {
-            //du får hämta nyckeln
+            objective.text = "Current objective: Find the key by the dead palm tree";
+            if (Physics.Raycast(cam.position, cam.forward, out hit, 4, itemLayer))
+            {
+                if (hit.collider.GetComponent<ItemObject>().tag != "Key")
+                {
+                    pickUpScript.text = "You should pick up something else first...";
+                }
+            }
         }
-        else if (slots[3].ItemInSlot != null) //rep
+        else if (slots[3].ItemInSlot != null && noteCount <= 57) //rep
         {
-            //du får hämta plankor
+            objective.text = "Current objective: Find the tall palm trees that cross";
+            if (Physics.Raycast(cam.position, cam.forward, out hit, 4, itemLayer))
+            {
+                if (hit.collider.GetComponent<ItemObject>().tag != "Planks")
+                {
+                    pickUpScript.text = "You should pick up something else first...";
+                }
+            }
         }
-        else if (slots[2].ItemInSlot != null) //segel
+        else if (slots[2].ItemInSlot != null &&  noteCount <= 56) //segel
         {
-            //du får hömta rep
+            objective.text = "Current objective: Find the stump and dig up the rope";
+            if (Physics.Raycast(cam.position, cam.forward, out hit, 4, itemLayer))
+            {
+                if (hit.collider.GetComponent<ItemObject>().tag != "Rope")
+                {
+                    pickUpScript.text = "You should pick up something else first...";
+                }
+            }
         }
         else if (slots[1].ItemInSlot != null) //spade
         {
-            //du får hämta segel
-            Debug.Log("AIDS 2");
+            objective.text = "Current objective: Find the smugglers base";
+            if (Physics.Raycast(cam.position, cam.forward, out hit, 4, itemLayer))
+            {
+                if (hit.collider.GetComponent<ItemObject>().tag != "Sails")
+                {
+                    pickUpScript.text = "You should pick up something else first...";
+                }
+            }
         }
         else if (slots[0].ItemInSlot != null) //notes
         {
             objective.text = "Current objective: Pick up the shovel";
             if (Physics.Raycast(cam.position, cam.forward, out hit, 4, itemLayer))
             {
-                //if gametag == shovel, spaden är interagerbar
-                //else alla andra items visar du måste plocka upp nått annat först
                 if (hit.collider.GetComponent<ItemObject>().tag != "Shovel")
                 {
                     pickUpScript.text = "You should pick up something else first...";
-                    //interactable
                 }
             }
-            
-        }
-                
+
+        }      
     }
 }
         
