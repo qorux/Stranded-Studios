@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class IntroScene : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class IntroScene : MonoBehaviour
         {
             introText=tempObject.GetComponent<TextMeshProUGUI>();
         }
-        introText.text = "Yesterday you met a strange fellow called mr X at the pub. He seemed nice but a bit suspicious.. You remember him handing you a bottle of rum, but after that your memory fails you.";
+        introText.text = "Yesterday you met a strange fellow called mr X at the pub. He seemed nice but a bit suspicious.. You remember him handing you a bottle of rum, but after that your memory fails you. You now awaken on a desert island, with no clue as to how you got there. There appears to be a broken boat next to you and a note waiting for you…";
         
     }
 
@@ -25,7 +26,7 @@ public class IntroScene : MonoBehaviour
      if (Input.anyKey && !keyPressed) 
         {
             keyPressed= true;
-            introText.text += "<br> You now awaken on a desert island, with no clue as to how you got there. There appears to be a broken boat next to you and a note waiting for you…";
+            SceneManager.LoadScene(2);
         }   
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class InventorySystem : MonoBehaviour
 {
@@ -22,9 +23,8 @@ public class InventorySystem : MonoBehaviour
     }
 
     private void Update() {
-       //InventoryUI.SetActive(true);
-
-
+        //InventoryUI.SetActive(true);
+        WinGame();
     }
 
     public void PickUpItem(ItemObject obj){
@@ -58,6 +58,14 @@ public class InventorySystem : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public void WinGame() { 
+     
+            if (slots[5].ItemInSlot != null)
+            {
+                SceneManager.LoadScene(4);
+            }
     }
 
     bool WillHitMaxStack(int index, int amount)
