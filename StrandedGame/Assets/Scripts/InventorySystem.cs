@@ -10,6 +10,7 @@ public class InventorySystem : MonoBehaviour
 {
     public Text objective;
     public int noteCount = 0;
+   
 
     [SerializeField] public Slot[] slots = new Slot[40];
     [SerializeField] GameObject InventoryUI;
@@ -80,6 +81,8 @@ public class InventorySystem : MonoBehaviour
      
             if (slots[6].ItemInSlot != null)
             {
+            if (Input.GetKeyDown(KeyCode.B))
+
                 //kolla om player byggt båten
                 SceneManager.LoadScene(4);
             }
@@ -129,7 +132,7 @@ public class InventorySystem : MonoBehaviour
                 }
             }
         }
-        else if (slots[4].ItemInSlot != null && noteCount <= 58) //plankor
+        else if (slots[4].ItemInSlot != null && noteCount >= 58) //plankor
         {
             objective.text = "Current objective: Find the key by the dead palm tree";
             if (Physics.Raycast(cam.position, cam.forward, out hit, 4, itemLayer))
@@ -140,7 +143,7 @@ public class InventorySystem : MonoBehaviour
                 }
             }
         }
-        else if (slots[3].ItemInSlot != null && noteCount <= 57) //rep
+        else if (slots[3].ItemInSlot != null && noteCount >= 57) //rep
         {
             objective.text = "Current objective: Find the tall palm trees that cross";
             if (Physics.Raycast(cam.position, cam.forward, out hit, 4, itemLayer))
@@ -151,7 +154,7 @@ public class InventorySystem : MonoBehaviour
                 }
             }
         }
-        else if (slots[2].ItemInSlot != null &&  noteCount <= 56) //segel
+        else if (slots[2].ItemInSlot != null &&  noteCount >= 56) //segel
         {
             objective.text = "Current objective: Find the stump and dig up the rope";
             if (Physics.Raycast(cam.position, cam.forward, out hit, 4, itemLayer))
