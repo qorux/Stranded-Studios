@@ -10,6 +10,12 @@ public class NoteAppear : MonoBehaviour
     private int noteCount = 0;
     public TextMeshProUGUI noteText;
     public Slot slot;
+    public bool noteUpdated;
+    public TextMeshProUGUI UpdateNote;
+    public bool hasRun;
+    public bool hasRun1;
+    public bool hasRun2;
+    public bool hasRun3;
 
     [SerializeField] TextMeshProUGUI remindme;
 
@@ -32,6 +38,10 @@ public class NoteAppear : MonoBehaviour
         }
         GameObject notesInInventory = GameObject.Find("Slot");
         slot=notesInInventory.GetComponent<Slot>();
+
+        GameObject noteUpdatesTemp = GameObject.Find("reminderText");
+        UpdateNote = noteUpdatesTemp.GetComponent<TextMeshProUGUI>();
+        UpdateNote.enabled=false;
     }
 
     // Update is called once per frame
@@ -39,27 +49,40 @@ public class NoteAppear : MonoBehaviour
     {
 
         noteCount = slot.AmountInSlot;
-        if (noteCount == 55)
+        if (noteCount == 55 && !hasRun)
         {
-            noteText.text = "I�m sorry I left you here on the island, but I need you to retrieve something for me. Somewhere on the island a very valuable treasure is hidden. I was here many years ago searching for it but could not find it, and now I am too old to do it myself!\r\n\r\n There are some spare parts around the island for you to find in order to fix the boat. At each location I have left a note for you, to help you find the next one. I also left you a shovel that might come in handy. \r\n\r\n For your first clue - I remember there were some rum smugglers operating on the eastern part of the island a while back, you might find something useful there. (FYI the boat points to the north).\r\n\r\n Good luck! //X";
+            noteUpdated= true;
+            hasRun=true;
+            noteText.text = "I'm sorry I left you here on the island, but I need you to retrieve something for me. Somewhere on the island a very valuable treasure is hidden. I was here many years ago searching for it but could not find it, and now I am too old to do it myself!\r\n\r\n There are some spare parts around the island for you to find in order to fix the boat. At each location I have left a note for you, to help you find the next one. I also left you a shovel that might come in handy. \r\n\r\n For your first clue - I remember there were some rum smugglers operating on the eastern part of the island a while back, you might find something useful there. (FYI the boat points to the north).\r\n\r\n Good luck! //X";
         }
-        else if (noteCount == 56)
+        else if (noteCount == 56 && !hasRun1)
         {
-            noteText.text = "I remember burying some supplies next to a stump, if i remember correctly you�ll find some rope there to help fix your boat. If you go back to the boat, and find where the path splits, you�ll find it in the Y.\r\n\r\n//X";
+            noteUpdated= true;
+            hasRun1 = true;
+            noteText.text = "I remember burying some supplies next to a stump, if i remember correctly you'll find some rope there to help fix your boat. If you go back to the boat, and find where the path splits, you'll find it in the Y.\r\n\r\n//X";
         }
-        else if (noteCount == 57)
+        else if (noteCount == 57 && !hasRun2)
         {
-
+            noteUpdated= true;
+            hasRun2 = true;
             noteText.text = "You will probably need some spare planks in order to fix the boat. If you carry on on the western path, you�ll get to the lagoon. Here, the planks can be found where the tall palm trees cross.\r\n\r\n//X";
         }
-        else if (noteCount == 58)
+        else if (noteCount == 58 && !hasRun3)
         {
-            noteText.text = "Now, you should have everything you need to fix the boat, time to get the treasure!\r\n\r\nLike I said I never did manage to get to the treasure last time I was here� The treasue is said to be deep in the cave, and the key is hidden somewhere on the island. I did find a clue as to where the key is, perhaps you�ll have more luck with it.\r\n\r\nThe clue is as follows:\r\n\r\n�Under the cliff, you�ll find it in a jif\r\n\r\nBy the palm dead, search the white head�";
+            noteUpdated = true;
+            hasRun3 = true;
+            noteText.text = "Now, you should have everything you need to fix the boat, time to get the treasure!\r\n\r\nLike I said I never did manage to get to the treasure last time I was here� The treasue is said to be deep in the cave, and the key is hidden somewhere on the island. I did find a clue as to where the key is, perhaps you'll have more luck with it.\r\n\r\nThe clue is as follows:\r\n\r\n�Under the cliff, you'll find it in a jif\r\n\r\nBy the palm dead, search the white head�";
         }
         if (Input.GetKeyDown("n"))
         {
             InventoryObject.enabled = !InventoryObject.enabled;
             NoteObject.enabled = !NoteObject.enabled;
+            noteUpdated = false;
+            UpdateNote.enabled = false;
+        }
+        if (noteUpdated) 
+        {
+            UpdateNote.enabled = true;
         }
     }
 
