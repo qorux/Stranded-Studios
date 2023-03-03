@@ -5,8 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class EnterCave : MonoBehaviour
 {
+    public InventorySystem inventorySystem;
+    public Slot[] slots;
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(2);
+        if (slots[5].ItemInSlot != null)
+            SceneManager.LoadScene(2);
     }
 }

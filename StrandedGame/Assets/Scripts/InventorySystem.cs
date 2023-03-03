@@ -82,9 +82,13 @@ public class InventorySystem : MonoBehaviour
             if (slots[6].ItemInSlot != null)
             {
             if (Input.GetKeyDown(KeyCode.B))
+            {
 
                 //kolla om player byggt båten
                 SceneManager.LoadScene(4);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
             }
     }
 
