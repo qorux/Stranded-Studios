@@ -1128,7 +1128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInteracts: {fileID: 735174146}
-  txtInteractionScript: {fileID: 0}
+  txtInteractionScript: {fileID: 490746087}
   itemLayer:
     serializedVersion: 2
     m_Bits: 0
