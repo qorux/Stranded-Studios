@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class NoteAppear : MonoBehaviour
@@ -16,6 +17,8 @@ public class NoteAppear : MonoBehaviour
     public bool hasRun1;
     public bool hasRun2;
     public bool hasRun3;
+    public bool hasRun4;
+    public Sprite map;
 
     [SerializeField] TextMeshProUGUI remindme;
 
@@ -42,6 +45,7 @@ public class NoteAppear : MonoBehaviour
         GameObject noteUpdatesTemp = GameObject.Find("reminderText");
         UpdateNote = noteUpdatesTemp.GetComponent<TextMeshProUGUI>();
         UpdateNote.enabled=false;
+
     }
 
     // Update is called once per frame
@@ -72,6 +76,14 @@ public class NoteAppear : MonoBehaviour
             noteUpdated = true;
             hasRun3 = true;
             noteText.text = "Now, you should have everything you need to fix the boat, time to get the treasure!\r\n\r\nLike I said I never did manage to get to the treasure last time I was here� The treasue is said to be deep in the cave, and the key is hidden somewhere on the island. I did find a clue as to where the key is, perhaps you'll have more luck with it.\r\n\r\nThe clue is as follows:\r\n\r\n�Under the cliff, you'll find it in a jif\r\n\r\nBy the palm dead, search the white head�";
+        }
+        else if (noteCount == 59 && !hasRun4)
+        {
+            noteUpdated = true;
+            hasRun4 = true;
+            noteText.text = " ";
+            NoteObject.GetComponent<Image>().sprite = map;
+
         }
         if (Input.GetKeyDown("n"))
         {
