@@ -27,14 +27,10 @@ public class PlayerInteractsUI : MonoBehaviour
         
         if(Physics.Raycast(cam.position, cam.forward, out hit, 2, itemLayer)){
             if(playerInteracts.GetInteractableObject()!= null && slots[1].ItemInSlot != null)
-            {
-            //Show();
-            txtInteractionScript.text = $"Hold 'B' to build the boat";
+                txtInteractionScript.text = $"Hold 'B' to build the boat";
 
-            }
             else{
-            //Hide();
-            txtInteractionScript.text = $"When you have enough stuff to build the boat, press 'B'!'";
+            txtInteractionScript.text = $"When you have gathered all of the items, press 'B' to build the boat!";
          }
         }
         else{
