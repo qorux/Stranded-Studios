@@ -5796,7 +5796,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Current objective: Read the note'
+  m_Text: 'Current objective: Pick up and read the note'
 --- !u!222 &77613704
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42406,7 +42406,7 @@ MonoBehaviour:
   hasRun2: 0
   hasRun3: 0
   hasRun4: 0
-  map: {fileID: 21300000, guid: 6196d140ae2b4c3489ecb8aec75c79c9, type: 3}
+  map: {fileID: 21300000, guid: 77a412fbe4fbbbc4eabf60acc704840b, type: 3}
   remindme: {fileID: 2008800666}
 --- !u!114 &1180767628
 MonoBehaviour:
