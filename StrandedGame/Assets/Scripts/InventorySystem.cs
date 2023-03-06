@@ -84,7 +84,7 @@ public class InventorySystem : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.B))
             {
 
-                //kolla om player byggt båten
+                //kolla om player byggt bï¿½ten
                 SceneManager.LoadScene(4);
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
@@ -125,7 +125,7 @@ public class InventorySystem : MonoBehaviour
                 }
             }
         }
-        else if (slots[5].ItemInSlot != null) //nyckel
+        else if (slots[5].ItemInSlot != null && noteCount >= 59) //nyckel
         {
             objective.text = "Current objective: Find the treasure in the cave";
             if (Physics.Raycast(cam.position, cam.forward, out hit, 4, itemLayer))
